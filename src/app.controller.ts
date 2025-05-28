@@ -2,7 +2,6 @@ import { Controller, Get, Query } from '@nestjs/common';
 import axios from 'axios';
 import { AppService } from './app.service';
 import { OTP_TOKENS } from './mock/otp-tokens.mock';
-import { mogo } from "./mock/mogo";
 
 @Controller()
 export class AppController {
@@ -24,8 +23,6 @@ export class AppController {
     }
 
     try {
-      console.log('Attempting to login to mogo.io with credentials:', { login: mogo.ll });
-      console.log('Using login credentials:', JSON.stringify({ login: mogo.ll, password: '***MASKED***' }));
       const loginRes = await axios.post('https://mogo.io/api/v1/auth/login', {
         login: process.env.EXTERNAL_SERVICE_LOGIN,
         password: process.env.EXTERNAL_SERVICE_PASSWORD,
