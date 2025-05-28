@@ -44,7 +44,7 @@ export class AppController {
 
       console.log('Sending SMS message with payload:', {
         message: otp,
-        from: 'PassportCard',
+        from: '0500505055',
         to: [phone.toString()],
         immediate: false,
         dlrState: 'all',
@@ -55,16 +55,15 @@ export class AppController {
         'https://mogo.io/api/v1/message-send',
         {
           message: otp,
-          from: 'PassportCard',
+          from: '0500505055',
           to: [phone.toString()],
           immediate: false,
           dlrState: 'all',
           customSendId: '123',
-          mogoAccountId: mogoAccountId
         },
         {
           headers: {
-            Authorization: token
+            Authorization: `Bearer ${token}`
           },
         }
       );
