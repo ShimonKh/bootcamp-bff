@@ -26,10 +26,9 @@ export class AppController {
     try {
       console.log('Attempting to login to mogo.io with credentials:', { login: mogo.ll });
       console.log('Using login credentials:', JSON.stringify({ login: mogo.ll, password: '***MASKED***' }));
-
       const loginRes = await axios.post('https://mogo.io/api/v1/auth/login', {
-        login: mogo.ll,
-        password: mogo.pp,
+        login: process.env.EXTERNAL_SERVICE_LOGIN,
+        password: process.env.EXTERNAL_SERVICE_PASSWORD,
       });
 
       console.log('Login response received:', loginRes.status);
