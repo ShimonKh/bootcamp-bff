@@ -1,4 +1,4 @@
 export const mogo = {
-    "ll":"shiranm@passportcard.co.il",
-    "pp": "59DG8Rz#"
+    "ll":process.env.EXTERNAL_SERVICE_LOGIN,
+    "pp": process.env.EXTERNAL_SERVICE_PASSWORD
 }
