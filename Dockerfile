@@ -20,7 +20,7 @@ COPY . .
 RUN npm run build
 
 # Указываем порт (если у тебя 3000 — можно поменять на 8080)
-EXPOSE 8080
+EXPOSE 3000
 
 # Запускаем приложение
 CMD ["node", "dist/main"]
